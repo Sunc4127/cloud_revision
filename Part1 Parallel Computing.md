@@ -7,13 +7,13 @@ Horizontal scaling: have more processors
 
 Types of parallel:
 
-* single machine multipule cores
+* single machine multiple cores
 * loosely coupled cluster of machines
 	* Seti@home
 * Tightly coupled clusters
 	* HPC, servers in a room
 * widely distributed clusters of machines ???
-* hibrid
+* hybrid
 
 ## Limitations:
 
@@ -45,7 +45,7 @@ Meaning: if the **fraction** of serial **work** is fixed and the problem size is
 
 ---
 
-#### Gustafson-Barsis's Law (calculaton???)
+#### Gustafson Barsis's Law (calculaton???)
 
 $$
 	T(1) = \sigma + N \pi \quad \quad T(N) = \sigma + \pi
@@ -79,10 +79,10 @@ For example, a parallel program takes 120s to run, and the total time spend in t
 	* Realised in many ways of different levels of ==granularity==, e.g. threads through to web service workflow definition and ==enactment==.
 * Single-program multiple-data   
 	![](./img/spmd.png)
-	* Commonly exploied model
+	* Commonly exploited model
 		* ==Bioinformatics==, MapReduce, ...
 	* Each process executes the same piece of code, but on different parts of the data
-	* Data is typically split among the available procs
+	* Data is typically split among the available processors
 	* Data splitting and analysis can be done in many ways
 	* Assignment 1
 * Pipeling   
@@ -92,7 +92,7 @@ For example, a parallel program takes 120s to run, and the total time spend in t
 	* A problem is divided into two or more sub problems. Each of these sub problems are solved independently and their results are combined
 	* 3 operations: split, compute and join
 	* Master-worker is like divide and conqure with master doing both split and join
-* Speculation: very complex, can't understand...
+* Speculation: do processing based on speculative values; if wrong, repeat and replace the value
 * Parametric Computation: never seen in the slides
 
 ### Erroneous Assumptions of Distributed Systems (Problems that hard to deal with)
@@ -106,8 +106,8 @@ For example, a parallel program takes 120s to run, and the total time spend in t
 5. Topology doesn't change
 6. There is one administrator
 7. Transport cost is zero
-8. The netowrk is homogeneous
-9. The time is _ubiquitous_ (Because there is no global time)
+8. The network is homogeneous
+9. The time is _ubiquitous_ (普遍存在的）(Because there is no global time)
 
 ### Distributed System Challenges
 

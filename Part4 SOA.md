@@ -10,10 +10,10 @@ Every system in a SOA should be considered as _autonomous_, but network-reachabl
 
 ![](img/soa_core.png)
 
-* A ==set of services== that a business wants to provide to their customers, partners, or other areas of an organizaiton
-* An architectural pattern that requires ==a service provider, mediaiton, and service requestor with a **service description**==
-* A set of architectural principles, patterns and criteria that address ==characteristics== such as _modularity, encapsulation, loose coupling, seperation of concerns, reuse and composability_.
-* A programming model complete with standards, tools and technologie that supports web services, REST services or other kinds of services.
+* A ==set of services== that a business wants to provide to their customers, partners, or other areas of an organization
+* An architectural pattern that requires ==a service provider, mediation, and service requestor with a **service description**==
+* A set of architectural principles, patterns and criteria that address ==characteristics== such as _modularity, encapsulation, loose coupling, separation of concerns, reuse and composability_.
+* A programming model complete with standards, tools and technology that supports web services, REST services or other kinds of services.
 * A middleware solution optimized for service assembly, orchestration, monitoring, and management.
 
 ## SOA Principles
@@ -23,11 +23,11 @@ Every system in a SOA should be considered as _autonomous_, but network-reachabl
 * Standardized service contract: Services adhere to a ==communications agreement==, as defined collectively by one or more service-description documents
 * Service loose coupling: Services maintain a relationship that minimizes dependencies and only requires that they ==maintain an awareness== of each other.
 * Service encapsulation: Many services are consolidated for use under a SOA. Often such services are not planned to be under a SOA.
-* Service abstraction: Beyond descriptions in the service contract, servies ==hide logic== from the outside world.
+* Service abstraction: Beyond descriptions in the service contract, services ==hide logic== from the outside world.
 * Service reusability: Logic is ==divided== into services with the ==intention of promoting reuse==.
 * Service autonomy: Service have control over the logic they encapsulate.
-* Service discoverability: Service are supplemented with communicative meta data by which they can be effectively ==discovered and interpreted==.
-* Service statelessness: Service minimise resource consumption by deferring the management of state information when necessary (HTTP).
+* Service discoverability: Service is supplemented with communicative meta data by which they can be effectively ==discovered and interpreted==.
+* Service statelessness: Service minimises resource consumption by deferring the management of state information when necessary (HTTP).
 * Service composability: Services are effective composition participants, regardless of the size and complexity of the composition.
 * Service granularity(粒度): A design consideration to provide optimal scope at the right ==granular level== of the business functionality in a service operation.
 * Service normalization: Services are decomposed and consolidated to a level of normal form to ==minimize redundancy==. (In some cases they are denormalized for performance [same to database]).
@@ -42,7 +42,7 @@ Both use HTTP, hence can run over the web.
 Two different architectural design:
 
 * SOAP/WS is built on the paradigm of RPC; practically, a language independent function call that spans another system.
-* REST is centered around resources, and the way they can be manipulated (HTTP actions) remotely.
+* REST is centered on resources, and the way they can be manipulated (HTTP actions) remotely.
 * SOAP/WS is a stack of protocols that covers ==every aspect of using a remote service==, from service discovery to service description, to the actual request/response, while REST is an architectural style.
 
 ---
@@ -122,8 +122,15 @@ RESTful systems use a Uniform Interface[^UniformInterface].
 
 ### REST best practices
 1. Keep your URIs short – and create URIs that don’t change. 
-2. URIs should be opaque identifiers that are meant to be discovered by following hyperlinks, not constructed by the client.3. Use nouns, not verbs in URLs4. Make all HTTP GETs side-effect free. Doing so makes the request "safe".5. Use links in your responses to requests! Doing so connects your response with other data. It enables client applications to be "self-propelled". That is, ==the response itself contains info about "what's the next step to take"==. Contrast this to responses that do not contain links. Thus, the decision of "what's the next step to take" must be made out-of-band.
-6. Minimize the use of query strings. For example: Prefer:   	http://www.amazon.com/products/AXFC   	Over:   	http://www.amazon.com/products?product-id=AXFC7. Use HTTP status codes to convey errors/success
+2. URIs should be opaque identifiers that are meant to be discovered by following hyperlinks, not constructed by the client.
+3. Use nouns, not verbs in URLs
+4. Make all HTTP GETs side-effect free. Doing so makes the request "safe".
+5. Use links in your responses to requests! Doing so connects your response with other data. It enables client applications to be "self-propelled". That is, ==the response itself contains info about "what's the next step to take"==. Contrast this to responses that do not contain links. Thus, the decision of "what's the next step to take" must be made out-of-band.
+6. Minimize the use of query strings. For example: Prefer:   
+	http://www.amazon.com/products/AXFC   
+	Over:   
+	http://www.amazon.com/products?product-id=AXFC
+7. Use HTTP status codes to convey errors/success
 
 ### Resource-oriented architecture
 

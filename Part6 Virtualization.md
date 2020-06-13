@@ -3,8 +3,8 @@
 ## Terminology
 
 * Virtual machine monitor / Hypervisor   
-	The virtualisation layer between the underlying hardware (e.g. the physical server) and the virtual machines and guest operating systems it supports.
-	* The environment of the VM should appear to be the same as the physical machine	* Minor decrease in performance only	* Appears as though in control of system resources
+	The virtualization layer between the underlying hardware (e.g. the physical server) and the virtual machines and guest operating systems it supports.
+	* The environment of the VM should appear to be the same as the physical machine	* Minor decreases in performance only	* Appears as though in control of system resources
 
 * Virtual Machine: A ==representation of a real machine== using hardware/software that can host a guest operating system.
 * Guest Operating System: An operating system that runs in a virtual machine environment that would otherwise run directly on a separate physical system.
@@ -39,19 +39,19 @@ Computer operating systems provide different levels of access to resources. A pr
 
 ### Classification of instructions
 
-> 'Instructions' means CPU instructions. Please see assembly language to learn more about instructions. [Here is the instrction set of x86](https://en.wikipedia.org/wiki/X86_instruction_listings).
+> 'Instructions' means CPU instructions. Please see assembly language to learn more about instructions. [Here is the instruction set of x86](https://en.wikipedia.org/wiki/X86_instruction_listings).
 
 * Privileged Instructions:   
 	instructions that trap if the processor is in user mode and do not trap in kernel mode.
 * Sensitive Instructions:    
-	instructions whose behaviour depends on the mode or configuration of the hardware. Different behaviours depending on whether in user or kernel mode.
+	Instructions whose behavior depends on the mode or configuration of the hardware. Different behavior depending on whether in user or kernel mode.
 * __Innocuous__ Instructions: instructions that are neither privileged nor sensitive –  Read data, add numbers etc.
 
 #### Intel Privileged and Sensitive Instructions (optional)
 
 The Intel architecture defines "privileged" instructions and "sensitive" instructions. The privileged instructions may ==only be executed when the Current Privilege Level is zero (CPL = 0)==. Attempting to execute a privileged instruction when CPL != 0 ==will generate a general protection (GP) exception==. Windows traps GP exceptions caused by executing privileged instructions and usually generates an application error. 
 
-The sensitive instructions (also called IOPL-sensitive) may only be executed when CPL <= IOPL (I/O Privilege Level). Attempting to execute a sensitive instruction when CPL > IOPL will generate a GP exception. This should usually not cause a fatal error. The Windows Virtual Machine Manager ==(VMM) traps GP exceptions caused by executing sensitive instructions and (depending on the instruction) either simulates the instruction's behavior in the VM in which the instruction was executed, or dispaches it to a virtual device driver, which simulates the instruction's behavior== (trap and emulate). 
+The sensitive instructions (also called IOPL-sensitive) may only be executed when CPL <= IOPL (I/O Privilege Level). Attempting to execute a sensitive instruction when CPL > IOPL will generate a GP exception. This should usually not cause a fatal error. The Windows Virtual Machine Manager ==(VMM) traps GP exceptions caused by executing sensitive instructions and (depending on the instruction) either simulates the instruction's behavior in the VM in which the instruction was executed, or dispatches it to a virtual device driver, which simulates the instruction's behavior== (trap and emulate). 
 
 ---
 
@@ -104,10 +104,10 @@ In full virtualization, the virtual machine simulates enough hardware to allow a
 
 #### Para-virtualization
 
-In paravirtualization, the virtual machine does not necessarily simulate hardware, but instead (or in addition) offers a special API that can only be used by modifying the "guest" OS.
+In para-virtualization, the virtual machine does not necessarily simulate hardware, but instead (or in addition) offers a special API that can only be used by modifying the "guest" OS.
 
 * Advantages:
-	* Lower virtualisation overheads, so better performance
+	* Lower virtualization overheads, so better performance
 * Disadvantages:
 	* Need to modify guest OS	* Can’t run arbitrary OS! –  Less portable	* Less compatibility
 

@@ -23,9 +23,9 @@
 
 ## Non-technical
 
-* Need to support security that scales* Avoid inventing specialised security, make it generic, easily to apply* Inter­organisational security	* Restrict access to certain users	* Changing policies over time	* Sharing resources with noisy neighbours
+* Need to support security that scales* Avoid inventing specialized security, make it generic, easy to apply* Inter­organizational security	* Restrict access to certain users	* Changing policies over time	* Sharing resources with noisy neighbors
 
-# Authenticaton
+# Authentication
 
 Authentication is ==the establishment and propagation== of a user’s ==identity== in the system. (Prove who you are) (Doesn't check what user is allowed to do (this is achieved by authorization))
 
@@ -50,7 +50,7 @@ Federated Identity (FID) refers to where the user stores their credentials. Alte
 ## Benefits
 
 * simple for users, single password, single sign-on to web-based resources
-* standardised
+* standardized
 
 ## Drawbacks (Security problems)
 
@@ -63,4 +63,4 @@ Federated Identity (FID) refers to where the user stores their credentials. Alte
 
 # Authorization
 
-Authorisation is concerned with controlling access to resources based on policy.
+Authorization is concerned with controlling access to resources based on policy.

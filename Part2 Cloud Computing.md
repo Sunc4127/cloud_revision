@@ -23,24 +23,24 @@ The difference between a cloud and a grid can be expressed as below:
 
 ## Architectures
 
-1. Centralised system
-	* Single physical system. All resources are fully shared and tightly coupled within one integrated OS. (Time sharing???)
+1. Centralized system
+	* Single physical system. All resources are fully shared and tightly coupled within one integrated OS. (Time sharing?)
 2. Parallel system
-	* All procs eighter tightly coupled with centralised shared memory (multi-cores, OpenMP) or loosely coupled with distributed memory (MPI). Interprocess communication throught shared mem or message passing.
+	* All processors either tightly coupled with centralized shared memory (multi-cores, OpenMP) or loosely coupled with distributed memory (MPI). Interprocess communication through shared memory or message passing.
 3. Distributed system
 	* Multiple _autonomous_ computers with their own private memory, communicating through message passing over a computer network.
-	* computer to computer interaction focus
+	* computer to computer interaction focused
 	* heterogeneity
 4. Grid computing
 	* organization to organization focus
 
-(Cloud computing is centralised again to some extent (data centre))
+(Cloud computing is centralized again to some extent (data centre))
 
 ## Motivation
-* Cost-benifits: flexibility
+* Cost-benefits: flexibility
 * Simplicity: providers will take care of hardware.
 
-## Flavours of Cloud
+## Flavors of Cloud
 
 ### Delivery models
 
@@ -61,7 +61,7 @@ The difference between a cloud and a grid can be expressed as below:
 * Broad network access 
 * Resource pooling (don't have fixed set of resources)
 * Rapid elasticity
-* Measured service (Determines how you pay the money)
+* Measured service (Cloud systems automatically control and optimize resource use by leveraging a metering capability at some level of abstraction appropriate to the type of service )
 
 ### Deployment models
 
@@ -74,7 +74,7 @@ The difference between a cloud and a grid can be expressed as below:
 		* (users can) focus on core business
 		* cost-effective
 		* right sizing
-		* democratisation of computing (Users decide what service they want)
+		* democratization of computing (Users decide what service they want)
 	* cons
 		* security
 		* loss of control
@@ -90,7 +90,7 @@ The difference between a cloud and a grid can be expressed as below:
       * easier to secure
       * more trust
 	* cons
-		* core business irrelevent
+		* core business irrelevant
 		* staff/management overheads
 		* hardware obsolescence
 		* over/under utilization challenges
@@ -100,15 +100,15 @@ The difference between a cloud and a grid can be expressed as below:
    * cons:
       * how to move data/resources when needed
       * don't know when to burst into public and what data can go to public cloud
-      * don't know public cloud ==compliant== with PCI-DSS ( Payment Card Industry- Data Security Standard)
+      * don't know public cloud ==compliant== with PCI-DSS ( Payment Card Industry-Data Security Standard)
 
 # Practice
 
-## Deployment - virtual image vs scripting
+## Deployment - virtual Image vs scripting
 
 ### Virtual image
 
-Deploying complex cloud system requires alot of moving parts
+Deploying complex cloud system requires a lot of moving parts
 
 * Easy to forget what software you installed and what steps you took to configure system.
 * Might be non-repeatable
@@ -118,6 +118,6 @@ Virtual images are monolithic. (You don't have to recall what softwares to insta
 ### Scripting
 
 * Provides a record of what you did
-* codifies knowledge about system
-* make process repeatable.
-* make it programmable (but need to take more efforts)
+* Codifies knowledge about system
+* Make process repeatable.
+* Make it programmable (but need to take more efforts)

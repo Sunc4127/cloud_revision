@@ -7,7 +7,7 @@ The 'Vs':
 * Volume: the size of data
 * Velocity: the frequency of new data being brought in to the system and analysis performed
 * Variety: the variability and complexity of data schema.
-* ==Veracity==(精确性): the level of trust in the data accuracy; the more diverse sources you have, the more _unstructured_ they have, the less veracity you have.
+* ==Veracity==(精确性，真实性): the level of trust in the data accuracy; the more diverse sources you have, the more _unstructured_ they have, the less veracity you have.
 
 ## The CAP theorem
 
@@ -25,7 +25,7 @@ The 'Vs':
 ### Consistency and availability -- Two phase commit
 
 * locking data that are within the transaction scope
-* performing transactons on WAL
+* performing transactions on WAL
 * completing transactions commit only when all nodes in the cluster have performed the transaction (voted yes)
 * abort transactions when a partition is detected ???
 
@@ -34,14 +34,14 @@ consequence
 * reduced availability (locking)
 * enforced consistency
 
-No partition torlerance: if one node are unable to vote because of the network partition, then the coordinator will abort the transaction.   
+No partition tolerance: if one node are unable to vote because of the network partition, then the coordinator will abort the transaction.   
 
 CA is a good solution when the cluster is co-located, less good when it is distributed.
 
 ### Consistency and partition-tolerance -- Paxos  
-*  This famliy of algorithms is driven by consensus
+*  This family of algorithms is driven by consensus
 *  every node is either a proposer or an accepter
-   * one proposer propoes a value, other accepters accepts or refuses it
+   * one proposer propose a value, other accepters accepts or refuses it
 * when a proposer got sufficient number of acceptances, it sends confirmation message to a accepters with the agreed value
 
 ### Availability and Partition-tolerance -- Multi-Version concurrency control

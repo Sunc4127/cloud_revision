@@ -17,7 +17,7 @@ The block size of HDFS is 128MB. Reasons:
 * Reduced need for memory to store metadata
 * Reduced need for seek operations in big files
 * Efficient when most data of a block have to be processed
-* More efficient use of the network (less number of connectons)
+* More efficient use of the network (less number of connections)
 
 ![](img/hdfs.png)
 
@@ -25,7 +25,7 @@ The block size of HDFS is 128MB. Reasons:
 
 ### Why spark
 
-* Hadoop can only perform relatively simple jobs on large dataets.
+* Hadoop can only perform relatively simple jobs on large datasets.
 * Complex jobs are performed -> caching data in memory and finer-grained control on execution of jobs
 
 ### Spark runtime Architecture  
