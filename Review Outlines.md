@@ -26,7 +26,6 @@
 	- Distributed, completely heterogeneous data  
 	- Data is messy
 2. Solution: Cluster and Cloud Computing.  
-	~~Where is Domain drivers computing??????~~  
 
 3. Domain-driven design (From wiki)
 Domain-driven design (DDD) is an approach to software development for complex needs by connecting the implementation to an evolving model.  
@@ -96,7 +95,7 @@ $$S(32) = α + 32(1-α)≈29$$
 5. **Challenges with Distribution**
 	- Single point failure.
 	- General assumptions that typically do not hold in the real world.
-	- Dependene analysis is hard for core that uses pointers, recursion, ...;
+	- Dependency analysis is hard for core that uses pointers, recursion, ...;
 	- Loops can have unknown number of iterations
 	- Access to global resources (e.g. Shared variables)  
 
@@ -112,18 +111,18 @@ $$S(32) = α + 32(1-α)≈29$$
 	- Mapping
 
 	
-8. Parallelisation Paradigms(范例)
+8. Parallelization Paradigms(范例)
 	- Master Worker/Slave Model
-		- Masterdecomposesthe problem into small tasks, distributes to workers and gathers partial results to produce the final result
+		- Master decomposes the problem into small tasks, distributes to workers and gathers partial results to produce the final result
 	- Single-Program, Multiple-Data (SPMD)
 		- Each process executes the same piece of code, but on different parts of the data. Data is typically split among the available processors. 
 	- Data Pipelining
 		- Suitable for applications involving multiple stages of execution, that typically operate on large number of data sets.
 	- Divide and Conquer
-		- Aproblemisdividedinto two or more sub problems, and each of these sub problems are solved independently, and their results are combined. 
+		- A problem is divided into two or more sub problems, and each of these sub problems are solved independently, and their results are combined. 
 		- 3 operations:split, compute, and join
 		- Master-worker / **task-farming** is like divide and conquer with master doing both split and join operation.
-	- Speculative(投机的) Parallelism 
+	- Speculative(推测的) Parallelism 
 	- Parametric Computation
 
 	
@@ -203,7 +202,7 @@ Clustered computing is when two or more computers serve a single resource.
 
 ## Week 6 - Web Services, ReST Services, Twitter, Docker and Containerisation
 1. SoA (Service-oriented Architectures)  
-	When components are distributed, they have to interact in more loosely-coupled ways instead communicate directly.
+	When components are distributed, they have to interact in more loosely-coupled ways instead of communicating directly.
 	
 2. SoA Core ideas
 	- A set of externally facing services
@@ -214,22 +213,22 @@ Clustered computing is when two or more computers serve a single resource.
 
 3. SoA Design Principles  
 
-	Principle | Chinese | Description
-	:---- | :--- | :--- 
-	Standardized service contract | 标准服务契约 | 服务要遵循一个服务描述
-	Service loose coupling |  服务松耦合 | 服务之间的依赖要最小化
-	Service abstraction | 服务抽象 | 服务将自己的业务逻辑封装起来，对外部世界是隐藏的
-	Service reusability | 服务复用 | 业务逻辑切割成多个服务以实现复用的最大化
-	Service autonomy | 服务自治 | 服务应该有对它们封装的逻辑的控制权
-	Service statelessness | 服务无状态 | 理想情况下，服务应该是没有状态的
-	Service discoverablity | 服务发现 | 服务可以被发现，通常通过一个接口注册
-	Service composability | 服务组合 | 一个大问题可以被分割成很多小问题
-	Service granularity | 服务粒度 | 选择合适的服务粒度
-	Service normalization | 服务标准化
-	Service optimization | 服务最优化
-	Service relevance | 服务关联
-	Service encapsulation | 服务封装 | 内部实现对用户是隐藏的
-	Service location transparency | 服务地点透明 | 用户可以调用服务而无论服务的实际网络位置是什么
+| Principle                     | Chinese      | Description                                      |
+| :---------------------------- | :----------- | :----------------------------------------------- |
+| Standardized service contract | 标准服务契约 | 服务要遵循一个服务描述                           |
+| Service loose coupling        | 服务松耦合   | 服务之间的依赖要最小化                           |
+| Service abstraction           | 服务抽象     | 服务将自己的业务逻辑封装起来，对外部世界是隐藏的 |
+| Service reusability           | 服务复用     | 业务逻辑切割成多个服务以实现复用的最大化         |
+| Service autonomy              | 服务自治     | 服务应该有对它们封装的逻辑的控制权               |
+| Service statelessness         | 服务无状态   | 理想情况下，服务应该是没有状态的                 |
+| Service discoverablity        | 服务发现     | 服务可以被发现，通常通过一个接口注册             |
+| Service composability         | 服务组合     | 一个大问题可以被分割成很多小问题                 |
+| Service granularity           | 服务粒度     | 选择合适的服务粒度                               |
+| Service normalization         | 服务标准化   |
+| Service optimization          | 服务最优化   |
+| Service relevance             | 服务关联     |
+| Service encapsulation         | 服务封装     | 内部实现对用户是隐藏的                           |
+| Service location transparency | 服务地点透明 | 用户可以调用服务而无论服务的实际网络位置是什么   |
 
 4. SoA for the Web: Web Services
 	- Web services used to implement service-oriented architectures
@@ -299,31 +298,33 @@ Clustered computing is when two or more computers serve a single resource.
 	- POST - Neither safe nor idempotent
 
 11. ReST 2.0
-	- Motivation
-		- Everything as a service (EaaS)
-		- Vast number of entities and services
-		- Link services together to create workflows and mashups (混搭)
-	- Solution
-		- Extend API notation from mainly desktop applications to web apps and mobile platforms
-		- Create API hubs that aim to facilitate the sharing and usage of services
 
-12. Containerisation
-	- Similar concept of resource **isolation** and **allocation** as a VM
-	- Without bundling the entire hardware env. and full OS
-	- Containerization allows **virtual instances** to share a single host OS to reduce these wasted resources (drivers, binaries, libraries), since each container only holds the application and related binaries. The rest are shared among the containers.
-	- Virtualization vs Containerization  
+- Motivation
+  - Everything as a service (EaaS)
+  - Vast number of entities and services
+  - Link services together to create workflows and mashups (混搭)
+- Solution
+  - Extend API notation from mainly desktop applications to web apps and mobile platforms
+  - Create API hubs that aim to facilitate the sharing and usage of services
 
-		Virtualization | Containerization 
-		:---- | :--- 
-		Run on virtual hardware, have own OS kernels | Share same OS kernel
-		Communication through Ethernet devices | IPC mechanisms (pipes, sockets)
-		Security depends on hypervisor | Security requires close scrutiny (监视)
-		A bit slow performance | near native performance
-		File systems and libraries are not shared | File systems can be shared, libraries are shared
-		Slow startup time | fast startup time
-		Large storage | Small storage
+12. Containerization
+
+- Similar concept of resource **isolation** and **allocation** as a VM
+- Without bundling the entire hardware env. and full OS
+- Containerization allows **virtual instances** to share a single host OS to reduce these wasted resources (drivers, binaries, libraries), since each container only holds the application and related binaries. The rest are shared among the containers.
+- Virtualization vs Containerization  
+
+| Virtualization                               | Containerization                                 |
+| :------------------------------------------- | :----------------------------------------------- |
+| Run on virtual hardware, have own OS kernels | Share same OS kernel                             |
+| Communication through Ethernet devices       | IPC mechanisms (pipes, sockets)                  |
+| Security depends on hypervisor               | Security requires close scrutiny (监视)          |
+| A bit slow performance                       | near native performance                          |
+| File systems and libraries are not shared    | File systems can be shared, libraries are shared |
+| Slow startup time                            | fast startup time                                |
+| Large storage                                | Small storage                                    |
 		
-13. Docker (Container Orchestration tool)
+1.  Docker (Container Orchestration tool)
 	- Docker is currently the leading software container platform
 	- Container: a process behaves like an independent machine
 	- Image: a blueprint for a container
@@ -408,7 +409,7 @@ Clustered computing is when two or more computers serve a single resource.
 	- Coordinating the execution of tasks across a cluster
 2. HDFS Architecure
 	- A HDFS file is a collection of blocks stored in ***datanodes***, with metadata (such as the position of those blocks) that is stored in ***namenodes***
-	 - 简单来说: Namenode只存元数据，只知道具体数据在哪但是不知道具体数据. DataNode负责存具体的数据块. 用户查询的时候先从NameNode那里拿到具体数据块在那个DataNode上，***再去DataNode请求数据***. 因为怕NameNode爆炸, 所以NameNode只负责告诉你数据在哪而不返回具体数据. (跟GFS的master-slave原理应该是一样的)
+	 - 简单来说: Namenode只存元数据，只知道具体数据在哪但是不知道具体数据. DataNode负责存具体的数据块. 用户查询的时候先从NameNode那里拿到具体数据块在哪个DataNode上，***再去DataNode请求数据***. 因为怕NameNode爆炸, 所以NameNode只负责告诉你数据在哪而不返回具体数据. (跟GFS的master-slave原理应该是一样的)
 ![Delivery_models](./Pictures/Hadoop.jpg)  
 
 3. Apache Spark
@@ -559,5 +560,5 @@ Clustered computing is when two or more computers serve a single resource.
 		- A property of access control of multiple related, yet independent, software systems. With this property, a user logs in with a single ID and password to gain access to any of several related systems. 
 		- 当用户登录时，就可以获取所有系统的访问权限，不用对每个单一系统都逐一登录
 
-3. Decentralised Authentication (Proof of Identity) thru Shibboleth
+3. Decentralised Authentication (Proof of Identity) through Shibboleth
 	- **Shibboleth** is a single sign-on log-in system for computer networks and the Internet. It allows people to sign in using just **one identity to various systems** run by federations of different organizations or institutions. The federations are often universities or public service organizations.

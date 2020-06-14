@@ -9,13 +9,13 @@ Types of parallel:
 
 * single machine multiple cores
 * loosely coupled cluster of machines
-	* Seti@home
+  * Seti@home
 * Tightly coupled clusters
-	* HPC, servers in a room
+  * HPC, servers in a room
 * widely distributed clusters of machines ???
 * hybrid
 
-## Limitations:
+## Limitations
 
 #### Amdahl's Law
 
@@ -112,5 +112,7 @@ For example, a parallel program takes 120s to run, and the total time spend in t
 ### Distributed System Challenges
 
 * Complexity of implementations
-	* Middleware bloat and lock-in	* Vision and challenges of reality* Vendor specific solutions
+	* Middleware bloat and lock-in
+	* Vision and challenges of reality
+* Vendor specific solutions
 * Scale of the problem area
